@@ -1,0 +1,170 @@
+.events {
+  background-color: $color-bg-white;
+
+  &__container {
+    @extend %container-style;
+  }
+
+  &__section-title {
+    @extend %h2;
+
+    @media (min-width: 769px) {
+      margin-left: 40px;
+    }
+  }
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    gap: 60px;
+
+    @media (max-width: $tablet) {
+      margin-left: 0;
+      gap: 48px;
+      align-items: center;
+    }
+  }
+}
+
+.event-card {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: center;
+  width: 100%;
+
+  transition: transform $transition-speed;
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+    gap: 24px;
+    align-items: stretch;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  &__image-container {
+    position: relative;
+    overflow: hidden;
+    flex: 0 1 670px;
+    width: 100%;
+    aspect-ratio: 670 / 520;
+    border-radius: 0;
+
+    @media (max-width: $tablet) {
+      flex: none;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 16px;
+    padding: 0;
+  }
+
+  &__meta {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  &__tag {
+    font-family: $font-title;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: $color-text-muted; // Grey tag in mockup
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  &__date {
+    font-family: $font-body;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: $color-text; // Darker date text in mockup
+  }
+
+  &__title {
+    @extend %h3;
+
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+
+    font-size: 1.75rem;
+    color: $color-text;
+
+    transition: color $transition-speed;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    @media (max-width: $tablet) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__marker {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: $color-accent;
+  }
+
+  &__text {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: $color-text-muted;
+  }
+
+  &__link {
+    align-self: flex-start;
+
+    padding-bottom: 4px;
+    border-bottom: 2px solid $color-primary;
+
+    font-family: $font-title;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: $color-primary;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    transition: all $transition-speed;
+
+    &:hover {
+      padding-left: 4px;
+      border-color: $color-accent;
+      color: $color-accent;
+    }
+  }
+
+  &:hover {
+    .event-card__image {
+      transform: scale(1.03);
+    }
+  }
+
+  @media (max-width: $tablet) {
+    gap: 24px;
+  }
+}

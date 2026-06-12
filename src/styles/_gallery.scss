@@ -1,0 +1,184 @@
+.gallery {
+  padding-top: 140px; // Add top padding to clear the overlapping card above
+  background-color: $color-bg;
+
+  &__container {
+    @extend %container-style;
+  }
+
+  &__section-title {
+    @extend %h2;
+  }
+
+  &__slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    @media (max-width: $tablet) {
+      scrollbar-width: none;
+      scroll-snap-type: x mandatory;
+      overflow-x: auto;
+
+      -webkit-overflow-scrolling: touch;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+    @media (max-width: $tablet) {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 16px;
+      width: 100%;
+      transition: none;
+    }
+
+    @media (max-width: 480px) {
+      gap: 0;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    overflow: hidden;
+
+    height: 347px;
+    border: 1px solid rgba($color-border, 0.5);
+    border-radius: 0;
+
+    background-color: $color-bg-white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+
+    // Desktop Spans for 12-column layout
+    &:nth-of-type(1) {
+      @media (min-width: 641px) {
+        grid-column: span 3;
+      }
+    }
+
+    &:nth-of-type(2) {
+      @media (min-width: 641px) {
+        grid-column: span 9;
+      }
+    }
+
+    &:nth-of-type(3) {
+      @media (min-width: 641px) {
+        grid-column: span 9;
+      }
+    }
+
+    &:nth-of-type(4) {
+      @media (min-width: 641px) {
+        grid-column: span 3;
+      }
+    }
+
+    @media (max-width: $tablet) {
+      flex: 0 0 calc((100% - 16px) / 2);
+
+      aspect-ratio: 3 / 4;
+      scroll-snap-align: start;
+
+      width: auto;
+      height: auto;
+      border: none;
+      border-radius: 0;
+    }
+
+    @media (max-width: 480px) {
+      flex: 0 0 100%;
+      width: 100%;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.06);
+    }
+  }
+
+  // Slider Controls
+  &__controls {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 24px;
+    padding: 0 10px;
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $color-bg;
+
+    background-color: $color-primary;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    transition:
+      background-color $transition-speed,
+      transform $transition-speed;
+
+    &:hover {
+      transform: scale(1.05);
+      background-color: $color-accent;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  &__dots {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__dot {
+    cursor: pointer;
+
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+
+    background-color: rgba($color-primary, 0.2);
+
+    transition:
+      background-color $transition-speed,
+      transform $transition-speed;
+
+    &--active {
+      transform: scale(1.2);
+      background-color: $color-accent;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    padding-top: 60px;
+  }
+}

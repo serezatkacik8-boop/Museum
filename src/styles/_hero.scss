@@ -1,0 +1,267 @@
+.hero {
+  padding-top: 0;
+  background-color: $color-bg;
+
+  @media (max-width: $tablet) {
+    padding-top: 80px;
+  }
+
+  &__container {
+    @extend %container-style;
+
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1fr minmax(320px, 725px);
+    gap: 40px;
+    align-items: center;
+
+    @media (min-width: 769px) {
+      padding-right: 0;
+    }
+
+    @media (max-width: $tablet) {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      text-align: center;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    animation: fade-in-up 0.8s ease-out;
+
+    @media (min-width: 769px) {
+      margin-left: 190px;
+    }
+
+    @media (max-width: $tablet) {
+      order: 2;
+      align-items: center;
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: 522px;
+    left: 55px;
+    width: 14px;
+    height: 133px;
+    opacity: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    justify-content: flex-start;
+
+    margin-top: 0;
+
+    font-family: $font-title;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #687480;
+    letter-spacing: 2px;
+
+    span {
+      display: block;
+      width: 14px;
+      height: 43px;
+      writing-mode: vertical-rl;
+      direction: rtl;
+      transform: rotate(180deg);
+    }
+
+    &::after {
+      content: '';
+
+      display: block;
+
+      width: 1px;
+      height: 70px;
+
+      background-color: #1a5a4c;
+    }
+
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+
+  &__title {
+    @extend %h1;
+
+    margin-bottom: 24px;
+    text-align: left;
+
+    @media (max-width: $tablet) {
+      text-align: center;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    margin-top: 12px;
+
+    @media (max-width: $tablet) {
+      justify-content: center;
+    }
+  }
+
+  &__cta {
+    cursor: pointer;
+    display: flex;
+    align-items: stretch;
+    height: 56px;
+  }
+
+  &__cta-text {
+    display: flex;
+    align-items: center;
+
+    padding: 0 44px;
+    border: 1.5px solid $color-primary;
+    border-right: none;
+
+    font-family: $font-title;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: $color-primary;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    background-color: $color-bg-white;
+
+    transition:
+      background-color $transition-speed,
+      color $transition-speed;
+  }
+
+  &__cta-icon {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 56px;
+
+    background-color: $color-primary;
+
+    transition: background-color $transition-speed;
+
+    &::after {
+      content: '';
+
+      transform: rotate(45deg);
+
+      display: block;
+
+      width: 8px;
+      height: 8px;
+      margin-right: 2px;
+      border-top: 2px solid $color-bg;
+      border-right: 2px solid $color-bg;
+    }
+  }
+
+  &__cta:hover {
+    transform: translateY(-2px);
+
+    .hero__cta-text {
+      color: $color-bg-white;
+      background-color: $color-primary;
+    }
+
+    .hero__cta-icon {
+      background-color: $color-accent;
+    }
+  }
+
+  &__visual {
+    display: block;
+    width: 100%;
+    max-width: 725px;
+
+    @media (max-width: $tablet) {
+      order: 1;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+
+  &__logo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 120px;
+    height: 120px;
+    padding: 30px;
+    background-color: transparent;
+
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+
+  &__logo-svg {
+    width: 100%;
+    height: 100%;
+    fill: $color-text;
+  }
+
+  &__image-wrapper {
+    position: relative;
+
+    overflow: hidden;
+
+    width: 100%;
+    aspect-ratio: 725 / 655;
+    max-width: 725px;
+    height: auto;
+
+    opacity: 1;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+
+    animation: fade-in 1.2s ease-out;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  @media (max-width: $tablet) {
+    padding-top: 120px;
+  }
+}
+
+// Keyframe animations
+@keyframes fade-in-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
