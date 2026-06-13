@@ -1,6 +1,10 @@
 .events {
   background-color: $color-bg-white;
 
+  @media (min-width: 641px) and (max-width: 1024px) {
+    padding-top: 8px;
+  }
+
   &__container {
     @extend %container-style;
   }
@@ -26,8 +30,22 @@
       }
     }
 
-    @media (min-width: 769px) and (max-width: 1024px) {
-      margin-left: 40px;
+    @media (min-width: 641px) and (max-width: 1024px) {
+      width: 460px;
+      height: 48px;
+      margin-top: 0;
+      margin-left: -5px;
+
+      font-family: Montserrat, sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1;
+      color: #0f0e08;
+      text-transform: none;
+
+      &::after {
+        display: none;
+      }
     }
   }
 

@@ -2,28 +2,48 @@
   padding-top: 0;
   background-color: $color-bg;
 
+  @media (min-width: 1025px) {
+    transform: rotate(0deg);
+    height: 773px;
+    opacity: 1;
+  }
+
+  @media (max-width: 640px) {
+    padding-top: 120px;
+  }
+
+  @media (min-width: 641px) and (max-width: 1024px) {
+    padding-top: 0;
+  }
+
   &__container {
     @extend %container-style;
 
     position: relative;
 
-    display: grid;
-    grid-template-columns: 1fr minmax(320px, 725px);
-    gap: 40px;
-    align-items: start;
+    display: block;
+    height: 773px;
+    padding-top: 206px;
+    padding-right: 0;
 
-    @media (min-width: 769px) {
-      display: block;
-      height: 773px;
-      padding-top: 206px;
-      padding-right: 0;
+    @media (min-width: 641px) and (max-width: 1024px) {
+      display: flow-root;
+      height: 384px;
+      padding-top: 0;
+      padding-right: 39px;
+      padding-left: 39px;
     }
 
-    @media (max-width: $tablet) {
+    @media (max-width: 640px) {
+      display: grid;
       grid-template-columns: 1fr;
       gap: 32px;
       align-items: center;
       text-align: center;
+      height: auto;
+      padding-top: 0;
+      padding-right: 20px;
+      padding-left: 20px;
     }
   }
 
@@ -37,14 +57,20 @@
 
     animation: fade-in-up 0.8s ease-out;
 
-    @media (min-width: 769px) {
-      margin-top: 0;
-      margin-left: 0;
+    margin-top: 0;
+    margin-left: 0;
+
+    @media (min-width: 641px) and (max-width: 1024px) {
+      width: 340px;
+      align-items: flex-start;
+      margin-top: 127px;
+      margin-left: -5px;
     }
 
-    @media (max-width: $tablet) {
+    @media (max-width: 640px) {
+      grid-column: 1;
+      grid-row: 2;
       align-items: center;
-      order: 2;
     }
   }
 
@@ -97,7 +123,7 @@
       letter-spacing: 0;
     }
 
-    @media (max-width: $tablet) {
+    @media (max-width: 1024px) {
       display: none;
     }
   }
@@ -121,10 +147,18 @@
 
     opacity: 1;
 
-    @media (max-width: $tablet) {
+    @media (min-width: 641px) and (max-width: 1024px) {
+      width: 340px;
+      height: 130px;
+      margin-bottom: 0;
+      font-size: 54px;
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    @media (max-width: 640px) {
       width: auto;
       height: auto;
-
       font-size: 40px;
       line-height: 1.3;
       text-align: center;
@@ -137,8 +171,19 @@
     left: 256px;
     display: flex;
 
-    @media (max-width: $tablet) {
+    @media (min-width: 641px) and (max-width: 1024px) {
       position: static;
+      grid-column: 1;
+      grid-row: 2;
+      justify-content: flex-start;
+      margin-top: 38px;
+      margin-left: -5px;
+    }
+
+    @media (max-width: 640px) {
+      position: static;
+      grid-column: 1;
+      grid-row: 3;
       justify-content: center;
       margin-top: 24px;
     }
@@ -153,9 +198,14 @@
     width: 269px;
     height: 70px;
 
-    @media (max-width: $tablet) {
+    @media (max-width: 1024px) {
       width: auto;
       height: 56px;
+    }
+
+    @media (min-width: 641px) and (max-width: 1024px) {
+      width: 270px;
+      height: 70px;
     }
   }
 
@@ -176,6 +226,7 @@
     color: #0f0e08;
     text-align: center;
     letter-spacing: 0;
+    text-transform: uppercase;
 
     background-color: $color-bg-white;
 
@@ -184,7 +235,7 @@
       color $transition-speed,
       border-color $transition-speed;
 
-    @media (max-width: $tablet) {
+    @media (max-width: 1024px) {
       padding: 0 24px;
     }
   }
@@ -219,8 +270,12 @@
       border-right: 2px solid $color-bg;
     }
 
-    @media (max-width: $tablet) {
+    @media (max-width: 1024px) {
       flex: 0 0 56px;
+    }
+
+    @media (min-width: 641px) and (max-width: 1024px) {
+      flex: 0 0 70px;
     }
   }
 
@@ -249,20 +304,26 @@
     width: 725px;
     height: 655px;
 
-    @media (max-width: 1024px) {
+    @media (min-width: 641px) and (max-width: 1024px) {
+      position: absolute;
+      top: 0;
+      left: 394px;
+      right: auto;
+      width: 374px;
+      height: 384px;
+      opacity: 1;
+    }
+
+    @media (max-width: 640px) {
       position: relative;
       top: auto;
       right: auto;
-
+      grid-column: 1;
+      grid-row: 1;
       width: 100%;
-      max-width: 725px;
-      height: auto;
-    }
-
-    @media (max-width: $tablet) {
-      order: 1;
       max-width: 500px;
       margin: 0 auto;
+      height: auto;
     }
   }
 
@@ -291,7 +352,7 @@
     opacity: 1;
     background-color: transparent;
 
-    @media (max-width: $tablet) {
+    @media (max-width: 1024px) {
       display: none;
     }
   }
@@ -299,6 +360,35 @@
   &__logo-img {
     width: auto;
     height: 100%;
+  }
+
+  &__logo-text {
+    display: none;
+
+    @media (min-width: 641px) and (max-width: 1024px) {
+      position: absolute;
+      z-index: 10;
+      top: 15px;
+      left: 394px;
+      transform: rotate(0deg);
+
+      display: block;
+
+      width: 220px;
+      height: 72px;
+      padding: 0;
+
+      font-family: Montserrat, sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 100%;
+      text-align: center;
+      letter-spacing: 0;
+      color: #0f0e08;
+
+      opacity: 1;
+      background-color: transparent;
+    }
   }
 
   &__image-wrapper {
@@ -315,7 +405,13 @@
 
     animation: fade-in 1.2s ease-out;
 
-    @media (max-width: 1024px) {
+    @media (min-width: 641px) and (max-width: 1024px) {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: auto;
+    }
+
+    @media (max-width: 640px) {
       aspect-ratio: 725 / 655;
       width: 100%;
       height: auto;
@@ -332,23 +428,18 @@
 
     transition: transform 0.6s ease;
 
+    @media (min-width: 641px) and (max-width: 1024px) {
+      object-position: center bottom;
+      transform: rotate(-180deg) scale(1.6) translateY(12%);
+    }
+
     &:hover {
       transform: rotate(-180deg) scale(1.03);
+
+      @media (min-width: 641px) and (max-width: 1024px) {
+        transform: rotate(-180deg) scale(1.65) translateY(12%);
+      }
     }
-  }
-
-  @media (min-width: 769px) {
-    transform: rotate(0deg);
-    height: 773px;
-    opacity: 1;
-  }
-
-  @media (max-width: $tablet) {
-    padding-top: 80px;
-  }
-
-  @media (max-width: $tablet) {
-    padding-top: 120px;
   }
 }
 
