@@ -28,7 +28,7 @@
       width: 100%;
       height: 100%;
 
-      background-color: rgba($color-primary, 0.75); // Dark mask overlay
+      background-color: #000000bf; // Dark mask overlay
     }
   }
 
@@ -54,6 +54,12 @@
     margin: 0 auto;
 
     text-align: center;
+
+    @media (min-width: 1280px) {
+      width: 570px;
+      max-width: 570px;
+      height: 224px;
+    }
   }
 
   &__title {
@@ -66,6 +72,25 @@
       margin: 12px auto 0;
       background-color: $color-accent;
     }
+
+    @media (min-width: 1280px) {
+      width: 370px;
+      height: 48px;
+      margin: 0 auto;
+
+      font-family: Montserrat, sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 100%;
+      color: #fff;
+      text-align: center;
+      text-transform: none;
+      letter-spacing: 0%;
+
+      &::after {
+        display: none;
+      }
+    }
   }
 
   &__description {
@@ -75,6 +100,20 @@
     font-size: 1.1rem;
     line-height: 1.6;
     color: rgba($color-bg, 0.85);
+
+    @media (min-width: 1280px) {
+      width: 570px;
+      height: 18px;
+      margin: 0;
+
+      font-family: $font-body;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 100%;
+      color: #fff;
+      text-align: center;
+      letter-spacing: 0%;
+    }
   }
 
   &__form {
@@ -90,12 +129,27 @@
     @media (max-width: $tablet) {
       flex-direction: row; // Keep inline input + button on mobile too as shown in Figma
     }
+
+    @media (min-width: 1280px) {
+      gap: 30px;
+
+      width: 570px;
+      max-width: 570px;
+      height: 70px;
+      margin-top: 56px;
+    }
   }
 
   &__input-wrapper {
     position: relative;
     flex-grow: 1;
     text-align: left;
+
+    @media (min-width: 1280px) {
+      flex-grow: 0;
+      width: 470px;
+      height: 100%;
+    }
   }
 
   &__input {
@@ -123,6 +177,10 @@
       transition: background-color 5000s ease-in-out 0s;
 
       -webkit-text-fill-color: $color-text !important;
+    }
+
+    @media (min-width: 1280px) {
+      height: 100%;
     }
   }
 
@@ -166,6 +224,11 @@
     &:active {
       background-color: $color-accent-active;
     }
+
+    @media (min-width: 1280px) {
+      width: 70px;
+      height: 100%;
+    }
   }
 
   &__btn-icon {
@@ -189,6 +252,18 @@
       border-top: 2.5px solid $color-bg-white;
       border-right: 2.5px solid $color-bg-white;
     }
+  }
+
+  @media (min-width: 1280px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 1280px;
+    height: 550px;
+    margin: 0 auto;
+    padding: 0;
   }
 
   @media (max-width: $tablet) {

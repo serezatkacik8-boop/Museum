@@ -5,9 +5,9 @@
   overflow: visible; // Allow card to overlap the bottom border
 
   width: 100%;
-  max-width: 100%;
+  max-width: 1280px;
   height: 550px;
-  margin-bottom: 100px;
+  margin: 0 auto 100px;
 
   text-align: center;
 
@@ -25,10 +25,6 @@
     height: 100%;
   }
 
-  @media (max-width: $tablet) {
-    margin-bottom: 70px;
-  }
-
   &__bg-image {
     width: 100%;
     height: 100%;
@@ -43,6 +39,7 @@
 
     display: flex;
     justify-content: center;
+
     height: 100%;
   }
 
@@ -64,7 +61,7 @@
     border-radius: 0;
 
     background-color: $color-bg-white;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 0 0 #1a5a4c40;
 
     transition: transform $transition-speed;
 
@@ -72,9 +69,23 @@
       transform: translate(-50%, 90%) translateY(-2px);
     }
 
+    @media (min-width: 1280px) {
+      transform: translate(-50%, 90%);
+
+      justify-content: flex-start;
+
+      width: 570px;
+      height: 204px;
+      padding: 45px 100px 50px;
+
+      &:hover {
+        transform: translate(-50%, 90%) translateY(-2px);
+      }
+    }
+
     @media (max-width: 1024px) {
-      min-height: auto;
       width: calc(100% - 78px);
+      min-height: auto;
       padding: 30px;
 
       &:hover {
@@ -94,6 +105,11 @@
 
     width: 100%;
     margin-bottom: 12px;
+
+    @media (min-width: 1280px) {
+      align-items: baseline;
+      margin-bottom: 16px;
+    }
   }
 
   &__card-tag {
@@ -103,6 +119,19 @@
     color: $color-accent;
     text-transform: uppercase;
     letter-spacing: 1.5px;
+
+    @media (min-width: 1280px) {
+      width: 70px;
+      height: 14px;
+
+      font-family: $font-body;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 100%;
+      color: #687480;
+      text-align: left;
+      letter-spacing: 0%;
+    }
   }
 
   &__card-date {
@@ -110,6 +139,21 @@
     font-size: 0.85rem;
     font-weight: 700;
     color: $color-primary;
+
+    @media (min-width: 1280px) {
+      width: 170px;
+      height: 21px;
+      margin-right: 40px;
+
+      font-family: $font-body;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 150%;
+      color: #1a5a4c;
+      text-align: right;
+      letter-spacing: 0%;
+      white-space: nowrap;
+    }
   }
 
   &__card-title {
@@ -121,12 +165,33 @@
     font-weight: 800;
     line-height: 1.2;
     color: $color-primary;
-    text-transform: uppercase;
+    text-transform: none;
     letter-spacing: -0.5px;
+
+    &::after {
+      display: none;
+    }
+
+    @media (min-width: 1280px) {
+      width: 370px;
+      height: 72px;
+
+      font-family: Montserrat, sans-serif;
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 100%;
+      color: #0f0e08;
+      text-align: left;
+      letter-spacing: 0%;
+    }
 
     @media (max-width: 1024px) {
       font-size: 1.5rem;
     }
+  }
+
+  @media (max-width: $tablet) {
+    margin: 0 auto 70px;
   }
 
   @media (max-width: 1024px) {

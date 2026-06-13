@@ -8,7 +8,25 @@
   &__section-title {
     @extend %h2;
 
-    @media (min-width: 769px) {
+    @media (min-width: 1025px) {
+      width: 470px;
+      height: 48px;
+      margin-bottom: 56px;
+      margin-left: 0;
+
+      font-family: Montserrat, sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1;
+      color: #0f0e08;
+      text-transform: none;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
       margin-left: 40px;
     }
   }
@@ -16,14 +34,24 @@
   &__grid {
     display: flex;
     flex-direction: column;
-    margin-left: 40px;
     gap: 60px;
+    margin-left: 40px;
+
+    @media (min-width: 1025px) {
+      gap: 104px;
+      margin-left: 0;
+    }
 
     @media (max-width: $tablet) {
-      margin-left: 0;
       gap: 48px;
       align-items: center;
+      margin-left: 0;
     }
+  }
+
+  @media (min-width: 1025px) {
+    padding-top: 82px;
+    padding-bottom: 104px;
   }
 }
 
@@ -32,24 +60,19 @@
   flex-direction: row;
   gap: 50px;
   align-items: center;
+
   width: 100%;
 
   transition: transform $transition-speed;
 
-  @media (max-width: $tablet) {
-    flex-direction: column;
-    gap: 24px;
-    align-items: stretch;
-    width: 100%;
-    max-width: 500px;
-  }
-
   &__image-container {
     position: relative;
+
     overflow: hidden;
     flex: 0 1 670px;
-    width: 100%;
+
     aspect-ratio: 670 / 520;
+    width: 100%;
     border-radius: 0;
 
     @media (max-width: $tablet) {
@@ -58,13 +81,14 @@
   }
 
   &__image {
+    cursor: pointer;
+
     position: absolute;
     top: 0;
     left: 0;
 
     width: 100%;
     height: 100%;
-    cursor: pointer;
 
     object-fit: cover;
 
@@ -73,16 +97,29 @@
 
   &__content {
     display: flex;
-    flex-direction: column;
     flex: 1;
+    flex-direction: column;
     gap: 16px;
+
     padding: 0;
+
+    @media (min-width: 1025px) {
+      flex: 0 0 370px;
+      width: 370px;
+      height: 202px;
+    }
   }
 
   &__meta {
     display: flex;
     gap: 16px;
     align-items: center;
+
+    @media (min-width: 1025px) {
+      position: relative;
+      width: 270px;
+      height: 21px;
+    }
   }
 
   &__tag {
@@ -92,6 +129,22 @@
     color: $color-text-muted; // Grey tag in mockup
     text-transform: uppercase;
     letter-spacing: 1.5px;
+
+    @media (min-width: 1025px) {
+      position: absolute;
+      top: 4px;
+      left: 0;
+
+      width: 170px;
+      height: 15px;
+
+      font-family: $font-body;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 100%;
+      color: #687480;
+      letter-spacing: 0%;
+    }
   }
 
   &__date {
@@ -99,6 +152,23 @@
     font-size: 0.85rem;
     font-weight: 700;
     color: $color-text; // Darker date text in mockup
+
+    @media (min-width: 1025px) {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      width: 173px;
+      height: 21px;
+
+      font-family: $font-body;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 150%;
+      color: #1a5a4c;
+      text-align: right;
+      letter-spacing: 0%;
+    }
   }
 
   &__title {
@@ -117,6 +187,18 @@
       color: $color-primary;
     }
 
+    @media (min-width: 1025px) {
+      width: 370px;
+      height: 39px;
+      margin-top: 14px;
+
+      font-family: Montserrat, sans-serif;
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 1;
+      color: #0f0e08;
+    }
+
     @media (max-width: $tablet) {
       font-size: 1.5rem;
     }
@@ -127,6 +209,12 @@
     width: 8px;
     height: 8px;
     background-color: $color-accent;
+
+    @media (min-width: 1025px) {
+      width: 15px;
+      height: 15px;
+      background-color: #f14a27;
+    }
   }
 
   &__text {
@@ -134,6 +222,19 @@
     font-size: 0.95rem;
     line-height: 1.65;
     color: $color-text-muted;
+
+    @media (min-width: 1025px) {
+      width: 370px;
+      height: 97px;
+      margin-top: -1px;
+
+      font-family: $font-body;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 150%;
+      color: #4e4e4e;
+      letter-spacing: 0%;
+    }
   }
 
   &__link {
@@ -162,6 +263,32 @@
     .event-card__image {
       transform: scale(1.03);
     }
+  }
+
+  &:nth-child(2) {
+    .event-card__content {
+      @media (min-width: 1025px) {
+        height: 228px;
+      }
+    }
+    .event-card__text {
+      @media (min-width: 1025px) {
+        height: 123px;
+      }
+    }
+  }
+
+  @media (min-width: 1025px) {
+    gap: 130px;
+  }
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+    gap: 24px;
+    align-items: stretch;
+
+    width: 100%;
+    max-width: 500px;
   }
 
   @media (max-width: $tablet) {
