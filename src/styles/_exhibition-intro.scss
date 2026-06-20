@@ -23,6 +23,12 @@
 
     width: 100%;
     height: 100%;
+
+    picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &__bg-image {
@@ -83,10 +89,10 @@
       }
     }
 
-    @media (max-width: 1024px) {
-      width: calc(100% - 78px);
-      min-height: auto;
-      padding: 30px;
+    @media (min-width: 640px) and (max-width: 1024px) {
+      width: 570px;
+      height: 204px;
+      padding: 45px 55px;
 
       &:hover {
         transform: translate(-50%, 90%) translateY(-2px);
@@ -94,7 +100,20 @@
     }
 
     @media (max-width: $tablet) {
-      width: calc(100% - 40px);
+      position: absolute;
+      top: 90px;
+      bottom: auto;
+      left: 20px;
+      transform: none;
+
+      width: 280px;
+      height: 140px;
+      min-height: auto;
+      padding: 0;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
     }
   }
 
@@ -110,27 +129,46 @@
       align-items: baseline;
       margin-bottom: 16px;
     }
+
+    @media (min-width: 640px) and (max-width: 1024px) {
+      position: relative;
+      width: 100%;
+      height: 21px;
+      margin-bottom: 0;
+    }
   }
 
   &__card-tag {
-    font-family: $font-title;
+    font-family: $font-body;
     font-size: 0.8rem;
-    font-weight: 700;
-    color: $color-accent;
+    font-weight: 500;
+    color: #687480;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 0;
 
     @media (min-width: 1280px) {
       width: 70px;
       height: 14px;
-
-      font-family: $font-body;
       font-size: 14px;
-      font-weight: 500;
       line-height: 100%;
-      color: #687480;
-      text-align: left;
-      letter-spacing: 0%;
+    }
+
+    @media (min-width: 640px) and (max-width: 1024px) {
+      position: absolute;
+      top: 4px;
+      left: 0;
+
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    @media (max-width: $tablet) {
+      position: absolute;
+      top: 24px;
+      left: 21px;
+
+      font-size: 16px;
+      line-height: 100%;
     }
   }
 
@@ -138,21 +176,35 @@
     font-family: $font-body;
     font-size: 0.85rem;
     font-weight: 700;
-    color: $color-primary;
+    color: #1a5a4c;
 
     @media (min-width: 1280px) {
       width: 170px;
       height: 21px;
       margin-right: 40px;
 
-      font-family: $font-body;
       font-size: 14px;
-      font-weight: 700;
       line-height: 150%;
-      color: #1a5a4c;
       text-align: right;
-      letter-spacing: 0%;
       white-space: nowrap;
+    }
+
+    @media (min-width: 640px) and (max-width: 1024px) {
+      position: absolute;
+      top: 0;
+      left: 240px;
+
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: $tablet) {
+      position: absolute;
+      top: 20px;
+      left: 105px;
+
+      font-size: 16px;
+      line-height: 150%;
     }
   }
 
@@ -160,38 +212,58 @@
     margin-top: 0;
     margin-bottom: 0;
 
-    font-family: $font-title;
+    font-family: Montserrat, sans-serif;
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 400;
     line-height: 1.2;
-    color: $color-primary;
+    color: #0f0e08;
     text-transform: none;
-    letter-spacing: -0.5px;
+    letter-spacing: 0;
 
     &::after {
       display: none;
+    }
+
+    br {
+      display: none;
+
+      @media (max-width: $tablet) {
+        display: inline;
+      }
     }
 
     @media (min-width: 1280px) {
       width: 370px;
       height: 72px;
 
-      font-family: Montserrat, sans-serif;
       font-size: 36px;
-      font-weight: 400;
       line-height: 100%;
-      color: #0f0e08;
       text-align: left;
-      letter-spacing: 0%;
     }
 
-    @media (max-width: 1024px) {
-      font-size: 1.5rem;
-    }
-  }
+    @media (min-width: 640px) and (max-width: 1024px) {
+      width: 370px;
+      height: 72px;
+      margin-top: 16px;
 
-  @media (max-width: $tablet) {
-    margin: 0 auto 70px;
+      font-size: 36px;
+      line-height: 100%;
+      text-align: left;
+    }
+
+    @media (max-width: $tablet) {
+      position: absolute;
+      top: 64px;
+      left: 0;
+
+      width: 100%;
+      margin: 0;
+      padding: 0;
+
+      font-size: 24px;
+      line-height: 100%;
+      text-align: center;
+    }
   }
 
   @media (max-width: 1024px) {
@@ -199,6 +271,8 @@
   }
 
   @media (max-width: $tablet) {
-    height: 280px;
+    width: 320px;
+    height: 210px;
+    margin: 0 auto 70px;
   }
 }
