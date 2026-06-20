@@ -26,7 +26,7 @@
 
       display: block;
 
-      width: 640px;
+      width: 100%;
       height: 500px;
       margin: 0 auto 40px;
       padding: 0;
@@ -37,7 +37,7 @@
 
       display: block;
 
-      width: 320px;
+      width: 100%;
       height: 759px;
       margin: 0 auto;
       padding: 0;
@@ -81,14 +81,18 @@
       @media (max-width: $tablet) {
         position: absolute;
         top: 144px;
-        left: 170px;
+        right: 20px;
+        left: auto;
+
         width: 130px;
       }
 
       @media (min-width: 640px) and (max-width: 1024px) {
         position: absolute;
         top: 51px;
-        left: 394px;
+        right: 39px;
+        left: auto;
+
         width: 160px;
       }
 
@@ -149,14 +153,18 @@
       @media (max-width: $tablet) {
         position: absolute;
         top: 631px;
-        left: 170px;
+        right: 20px;
+        left: auto;
+
         width: 130px;
       }
 
       @media (min-width: 640px) and (max-width: 1024px) {
         position: absolute;
         top: 430px;
-        left: 394px;
+        right: 39px;
+        left: auto;
+
         width: 160px;
       }
 
@@ -177,11 +185,12 @@
     @media (max-width: $tablet) {
       position: absolute;
       top: 590px;
+      right: 20px;
       left: 20px;
 
       display: block;
 
-      width: 280px;
+      width: auto;
       height: 1px;
 
       background-color: #1a5a4c80;
@@ -190,11 +199,12 @@
     @media (min-width: 640px) and (max-width: 1024px) {
       position: absolute;
       top: 365px;
+      right: 39px;
       left: 154px;
 
       display: block;
 
-      width: 460px;
+      width: auto;
       height: 1px;
 
       background-color: #1a5a4c80;
@@ -283,7 +293,8 @@
     @media (max-width: $tablet) {
       position: absolute;
       top: 56px;
-      left: 232px;
+      right: 20px;
+      left: auto;
 
       gap: 20px;
 
@@ -851,7 +862,8 @@
 
       position: absolute;
       top: 520px;
-      left: 250px;
+      right: 20px;
+      left: auto;
 
       display: flex;
       align-items: center;

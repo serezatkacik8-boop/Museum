@@ -7,10 +7,6 @@
     @media (max-width: 1024px) {
       padding: 0 34px;
     }
-
-    @media (max-width: $tablet) {
-      padding: 0;
-    }
   }
 
   &__section-title {
@@ -129,10 +125,11 @@
     @media (max-width: $tablet) {
       flex: none;
 
-      width: 280px;
-      height: 210px;
-      margin-right: 20px;
-      margin-left: 20px;
+      aspect-ratio: 280 / 210;
+      width: 100%;
+      height: auto;
+      margin-right: 0;
+      margin-left: 0;
     }
   }
 
@@ -220,7 +217,7 @@
     @media (max-width: $tablet) {
       position: absolute;
       top: 20px;
-      left: 21px;
+      left: 0;
 
       font-family: $font-body;
       font-size: 16px;
@@ -262,7 +259,8 @@
     @media (max-width: $tablet) {
       position: absolute;
       top: 16px;
-      left: 160px;
+      right: 0;
+      left: auto;
 
       font-family: $font-body;
       font-size: 16px;
@@ -318,8 +316,8 @@
       gap: 6px;
 
       margin-top: 50px;
-      margin-right: 20px;
-      margin-left: 20px;
+      margin-right: 0;
+      margin-left: 0;
 
       font-family: Montserrat, sans-serif;
       font-size: 28px;
@@ -367,8 +365,8 @@
 
     @media (max-width: $tablet) {
       margin-top: 10px;
-      margin-right: 20px;
-      margin-left: 20px;
+      margin-right: 0;
+      margin-left: 0;
 
       font-family: $font-body;
       font-size: 16px;
