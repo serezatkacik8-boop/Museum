@@ -5,9 +5,8 @@
   overflow: visible; // Allow card to overlap the bottom border
 
   width: 100%;
-  max-width: 1280px;
   height: 550px;
-  margin: 0 auto 100px;
+  margin-bottom: 100px;
 
   text-align: center;
 
@@ -271,6 +270,6 @@
   @media (max-width: $tablet) {
     width: 100%;
     height: 210px;
-    margin: 0 auto 70px;
+    margin-bottom: 70px;
   }
 }
